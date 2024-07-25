@@ -26,16 +26,16 @@ let rlSync = require("readline-sync");
 
 let inputInt = Number(rlSync.question("Please enter an integer greater than 0: "));
 let operationInput = rlSync.question("Enter \"s\" to compute the sum, or \"p\" to compute the product. ").trim();
-let counter = operationInput === 's' ? 0 : 1;
+let total = operationInput === 's' ? 0 : 1;
 
 if (operationInput === 's') {
   for (let i = 1; i <= inputInt; i += 1) {
-    counter += i;
+    total += i;
   }
-  console.log(`The sum of the integers between 1 and ${inputInt} is ${counter}`);
+  console.log(`The sum of the integers between 1 and ${inputInt} is ${total}`);
 } else if (operationInput === 'p') {
   for (let i = 1; i <= inputInt; i += 1) {
-    counter *= i;
+    total *= i;
   }
-  console.log(`The sum of the integers between 1 and ${inputInt} is ${counter}`);
+  console.log(`The sum of the integers between 1 and ${inputInt} is ${total}`);
 }
