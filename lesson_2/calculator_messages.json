@@ -1,10 +1,21 @@
-{
-  "greeting": "Welcome to Calculator! \n What's the first number?",
-  "invalidError": "Hmmm... that doesn't look like a valid number.",
-  "askSecond": "What's the second number?",
-  "operation": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
-  "operationError": "Must choose 1, 2, 3, or 4",
-  "askNewCalculation": "Would you like to perform a new calculation? type 'y' for Yes or 'n' for No",
-  "newCalcError": "Looks like we didn't understand. Please type 'y' for Yes or 'n' for No"
+{ "en":
+  { 
+    "greeting": "Welcome to Calculator! \n What's the first number?",
+    "invalidError": "Hmmm... that doesn't look like a valid number.",
+    "askSecond": "What's the second number?",
+    "operation": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
+    "operationError": "Must choose 1, 2, 3, or 4",
+    "askNewCalculation": "Would you like to perform a new calculation? type 'y' for Yes or 'n' for No",
+    "newCalcError": "Looks like we didn't understand. Please type 'y' for Yes or 'n' for No"
 
+  },
+  "es": {
+    "greeting": "¡Bienvenido a Calculadora! \n ¿Cuál es el primer número?",
+    "invalidError": "Hmmm... ese no parece un número válido.",
+    "askSecond": "¿Cuál es el segundo número?",
+    "operation": "¿Qué operación te gustaría realizar?\n1) Sumar 2) Restar 3) Multiplicar 4) Dividir",
+    "operationError": "Debes elegir 1, 2, 3 o 4",
+    "askNewCalculation": "¿Le gustaría realizar un nuevo cálculo? escriba 's' para Sí o 'n' para No",
+    "newCalcError": "Parece que no lo entendimos. Por favor escriba 's' para Sí o 'n' para No"
+  }
 }

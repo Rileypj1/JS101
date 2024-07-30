@@ -14,7 +14,6 @@ Data structures: strings, numbers for operations
 */
 
 const readline = require("readline-sync");
-const prompts = require("./calculator_messages.json");
 
 function prompt(message) {
   console.log(`=> ${message}`);
@@ -23,6 +22,16 @@ function prompt(message) {
 function invalidNumber(number) {
   return number.trimStart() === '' || Number.isNaN(Number(number));
   }
+
+prompt("What language would you prefer, English or Spanish? Write 'en' for English and 'es' for Spanish. ¿Qué idioma preferirías, inglés o español? Escribe 'en' para inglés y 'es' para español")
+let language = readline.question();
+
+while (!['es', 'en'].includes(language)) {
+  prompt("Sorry we didn't understand. Type 'en' for English or 'es' for Spanish.")
+  language = readline.question()
+}
+
+const prompts = require("./calculator_messages.json")[language];
 
 let startNewCalculation;
 do {
@@ -71,8 +80,8 @@ do {
   prompt(prompts.askNewCalculation);
   startNewCalculation = readline.question();
 
-  while (!['y', 'n'].includes(startNewCalculation)) {
+  while (!['y', 's', 'n'].includes(startNewCalculation)) {
     prompt(prompts.newCalcError);
     startNewCalculation = readline.question();
   }
-} while (startNewCalculation === 'y');
+} while (startNewCalculation === 'y' || startNewCalculation === 's');
