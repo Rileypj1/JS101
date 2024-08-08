@@ -66,20 +66,25 @@ while (startNewCalculation) {
     prompt('Looks like you didn\'t enter a number. Please enter your loan duration in years.');
     loanDuration = readline.question();
   }
-
+  //convert to %
+  apr = Number(apr) / 100;
   let loanDurationMonths = Number(loanDuration) * 12;
-  let monthlyInterest = Number(apr) / 12;
-  let monthlyPayment = Number(loanAmount) * (monthlyInterest
+  let monthlyInterest = apr / 12;
+  let monthlyPayment;
+  if (monthlyInterest) {
+    monthlyPayment = Number(loanAmount) * (monthlyInterest
              / (1 - Math.pow((1 + monthlyInterest), (-loanDurationMonths))));
-
-  console.log(`Your estimated monthly payment is $${monthlyPayment}.`);
+  } else {
+    monthlyPayment = Number(loanAmount) / loanDurationMonths;
+  }
+  console.log(`Your estimated monthly payment is $${monthlyPayment.toFixed(2)}.`);
 
   prompt('Do you want to get a new monthly estimate? Enter \'y\' for yes or \'n\' for no.');
   let askNewCalculation = readline.question();
-  while (['y','n'].indexOf(askNewCalculation.toLowerCase() < 0)) {
+  while (['y','n'].indexOf(askNewCalculation.toLowerCase()) === -1) {
     prompt('I\'m sorry, we didn\'t understand. Please enter \'y\' for yes or \'n\' for no.');
     askNewCalculation = readline.question();
   }
-  startNewCalculation = () => askNewCalculation.toLowerCase() === 'y';
+  startNewCalculation = (askNewCalculation.toLowerCase() === 'y');
 
 }

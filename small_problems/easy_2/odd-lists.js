@@ -2,6 +2,10 @@ function oddities(array) {
   let counter = 0;
   finalArray = [];
   
+  while (counter <= array.length-1) {
+    finalArray.push(array[counter]);
+    counter += 2
+  }
   return finalArray;
 }
 
