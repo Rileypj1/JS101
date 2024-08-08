@@ -7,7 +7,8 @@
 Ask the user if they want to perform another calculation
   1. add new prompt asking if they want to perform another calc
     i. this will have to be run before the program ends or breaks
-  2. depending on the response, loop through first 5 steps again or exit the program
+  2. depending on the response, loop through first 5 steps again or
+  exit the program
 Repeat steps 1-5 from original calculator assignment
 
 Data structures: strings, numbers for operations
@@ -17,25 +18,25 @@ const readline = require("readline-sync");
 
 function prompt(message) {
   console.log(`=> ${message}`);
-  }
+}
 
 function invalidNumber(number) {
   return number.trimStart() === '' || Number.isNaN(Number(number));
-  }
+}
 
-prompt("What language would you prefer, English or Spanish? Write 'en' for English and 'es' for Spanish. ¿Qué idioma preferirías, inglés o español? Escribe 'en' para inglés y 'es' para español")
+prompt("What language would you prefer, English or Spanish? Write 'en' for English and 'es' for Spanish. ¿Qué idioma preferirías, inglés o español? Escribe 'en' para inglés y 'es' para español");
 let language = readline.question();
 
 while (!['es', 'en'].includes(language)) {
-  prompt("Sorry we didn't understand. Type 'en' for English or 'es' for Spanish.")
-  language = readline.question()
+  prompt("Sorry we didn't understand. Type 'en' for English or 'es' for Spanish.");
+  language = readline.question();
 }
 
 const prompts = require("./calculator_messages.json")[language];
 
 let startNewCalculation;
 do {
-  prompt(prompts.greeting)
+  prompt(prompts.greeting);
   let number1 = readline.question();
 
   while (invalidNumber(number1)) {
